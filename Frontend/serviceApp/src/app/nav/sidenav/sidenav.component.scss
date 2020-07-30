@@ -1,3 +1,37 @@
-mat-sidenav-container {
-    height: 100%;
+mat-toolbar {
+  background-color: #d9232d;
+
+  mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+
+    .home {
+      display: flex;
+      align-items: center;
+
+      mat-icon {
+        padding-right: 10px;
+        cursor: pointer;
+      }
+    }
+
+    mat-list {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 0;
+
+      mat-list-item {
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+      }
+      mat-list-item:hover {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+      .active-list-item {
+        background-color:  rgba(0, 0, 0, 0.15)!important; 
+      }
+    }
+  }
 }

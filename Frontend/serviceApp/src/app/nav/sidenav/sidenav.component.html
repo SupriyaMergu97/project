@@ -1,35 +1,19 @@
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened="false" #snav>
-    <mat-nav-list>
-      <a mat-list-item routerLink="signup">Signup</a>
-    </mat-nav-list>
-    <mat-nav-list>
-      <a mat-list-item routerLink="login">Login</a>
-    </mat-nav-list>
-    <mat-nav-list>
-      <a mat-list-item routerLink="home">Home</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar>
-      <button type="button" mat-icon-button aria-label="Toggle sidebar" (click)="snavToggle(snav)">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span fxFlex>
-        <!-- <a class="home-link" routerLink=".">{{ title }}</a> -->
-      </span>
-    </mat-toolbar>
-    <router-outlet> </router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-<!-- <div ng-controller="AppCtrl" ng-cloak>
-  <md-content class="md-padding">
-    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-click="goto('page1')" name="page1">Page One</md-nav-item>
-      <md-nav-item md-nav-click="goto('page2')" name="page2">Page Two</md-nav-item>
-      <md-nav-item md-nav-click="goto('page3')" name="page3">Page Three</md-nav-item>
-    </md-nav-bar>
-    <div class="ext-content">
-      External content for `<span>{{currentNavItem}}</span>`
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="home">
+      <mat-icon class="icon">home</mat-icon>
+      <div><h1>Fix It</h1></div>
     </div>
-  </md-content> -->
+    <mat-list>
+      <mat-list-item routerLink="home" routerLinkActive="active-list-item"> Home </mat-list-item>
+      <mat-list-item routerLink="aboutus" routerLinkActive="active-list-item"> About Us</mat-list-item>
+      <mat-list-item [matMenuTriggerFor]="menu" routerLinkActive="active-list-item"> Register As a Professional </mat-list-item>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item routerLink="signup"> Signup </a>
+          <a mat-menu-item routerLink="login"> Login </a>
+        </mat-menu>
+    </mat-list>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet> </router-outlet>

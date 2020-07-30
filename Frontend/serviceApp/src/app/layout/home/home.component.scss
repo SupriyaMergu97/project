@@ -1,0 +1,33 @@
+.wrapper {
+  h1,
+  h3 {
+    position: absolute;
+    margin: 5%;
+    color: black;
+    font-family: initial;
+    font-style: italic;
+  }
+  h3 {
+    top: 15%;
+    font-size: 35px;
+    text-shadow: 0 0 10px #596cd8;
+  }
+  h1 {
+    top: 25%;
+    font-size: 60px;
+    text-shadow: 0 0 10px #596cd8;
+  }
+}
+
+img {
+  width: 100%;
+  height: 400px;
+  opacity: 0.8;
+}
+.actions{
+  margin:20px;
+}
+mat-card-actions,mat-form-field {
+  width: 25%;
+  display: flex;
+}

@@ -1,0 +1,68 @@
+<mat-card>
+  <div class="container">
+    <div>
+      <h3>ABOUT US</h3><hr>
+      <p>EasyFix is our commitment to bring professionalism, good service and trust to the home repair service and
+        maintenance business. We take immense pride in sending some of the most professional handymen to your homes to
+        fix
+        things that aren't working.
+      </p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <h3>Our Vision</h3><hr>
+        <p>
+          To provide customers with home repair service experience that delights them and become their
+          best-handy-friend.
+        </p>
+      </div>
+      <div class="column">
+        <h3>Our Values</h3><hr>
+        <p>
+          We believe in our processes and in our people who lead them. We enjoy the power of empowerment and delegation.
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2>Our Services</h2><hr>
+    <mat-grid-list cols="2" rowHeight="2:1.4" [gutterSize]="'25px'">
+      <mat-grid-tile> <img src="assets/Plumbing.jpg">
+        <div class="about">
+          <h3>Plumbar</h3>
+          <p>We Deal in all kinds of plumbing work including PPR Fittings, CPVC Fittings and GI Fittings. Be it a
+            contract with material or
+            contract without material or just minor repair work,
+            get your plumbing worries fixed once and for all.</p>
+            <button mat-raised-button (click)="bookNow()">BookNow</button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile><img src="assets/electrician.jpg">
+        <div class="about">
+          <h3>Electrician</h3>
+          <p>At EasyFix we are your one call partner for all your repair needs,
+            from a ceiling fan installation to doing commercial wiring or working on CAT 6 networking cable,
+            our electricians can do it all.</p>
+            <button mat-raised-button (click)="bookNow()">BookNow</button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile><img src="assets/carpenter.jpg">
+        <div class="about">
+          <h3>Carpenter</h3>
+          <p>Do you have to get a modular kitchen customized? Or do you plan to change the cloth for your sofa?
+            Or do you want to get some those paintings up on the wall?
+            EasyFix is a one call solution partner for all your needs.</p>
+            <button mat-raised-button (click)="bookNow()">BookNow</button>
+          </div>
+      </mat-grid-tile>
+      <mat-grid-tile><img src="assets/AC-REPAIR.jpg">
+        <div class="about">
+          <h3>AC & Refrigerator</h3>
+          <p>Hundreds of people trust us for their AC and Refrigeration related issues. Our professionally trained
+            servicemen can provide you with the most comprehensive solutions at charges that are unbeatable in the
+            market today</p>
+            <button mat-raised-button (click)="bookNow()">BookNow</button>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</mat-card>
