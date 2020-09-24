@@ -6,15 +6,17 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../material.module';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { BookingComponent } from './booking/booking.component'
+import { DialogboxComponent } from './dialogbox/dialogbox.component';
+
 
 @NgModule({
   declarations: [LoginComponent,
-    SignupComponent, HomeComponent, AboutUsComponent, BookingComponent],
+    SignupComponent, HomeComponent, AboutUsComponent, DialogboxComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,
     MaterialModule
-  ]
+  ],
+  entryComponents: [DialogboxComponent]
 })
 export class LayoutModule { }

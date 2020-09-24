@@ -12,6 +12,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 const modulesArr = [
@@ -27,7 +29,10 @@ const modulesArr = [
   MatMenuModule,
   MatSelectModule,
   MatCarouselModule,
-  MatGridListModule
+  MatGridListModule,
+  ReactiveFormsModule,
+  FormsModule,
+  MatDialogModule
 ]
 @NgModule({
   declarations: [],

@@ -1,32 +1,86 @@
-<form>
+<form class="formgroup" *ngIf="signupForm" [formGroup]="signupForm" (ngSubmit)="signup()">
   <mat-card>
     <mat-card-title>Sign Up</mat-card-title>
     <mat-card-content>
       <mat-form-field appearance="fill">
-        <mat-label>Select City</mat-label>
-        <mat-select  name="food">
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2">Option 2</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
+        <mat-label>City</mat-label>
+        <mat-select matSelect name="place" formControlName="city">
+          <mat-option *ngFor="let place of cities" [value]="place.city">{{place.city}}</mat-option>
         </mat-select>
-      </mat-form-field>      <mat-form-field>
-        <input type="text" matInput placeholder="firstname">
+        <mat-error *ngIf="signupForm.invalid && (signupForm.controls.city.touched || signupForm.controls.city.dirty)">
+          <span *ngIf="signupForm.hasError('required','city')">Please select city.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Services</mat-label>
+        <mat-select name="service" formControlName="category">
+          <mat-option *ngFor="let service of services" [value]="service.category">{{service.category}}</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.category.touched || signupForm.controls.category.dirty)">
+          <span *ngIf="signupForm.hasError('required','category')">Please select your profession.</span>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input type="text" matInput placeholder="lastname">
+        <input type="text" matInput placeholder="Firstname" formControlName="firstName" required>
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.firstName.touched || signupForm.controls.firstName.dirty)">
+          <span *ngIf="signupForm.hasError('required','firstName')">Please enter first name.</span>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input type="text" matInput placeholder="Mob.No">
+        <input type="text" matInput placeholder="Lastname" formControlName="lastName" required>
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.lastName.touched || signupForm.controls.lastName.dirty)">
+          <span *ngIf="signupForm.hasError('required','lastName')">Please enter Last name.</span>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input type="email" matInput placeholder="email">
+        <input type="text" matInput placeholder="Mob.No" required formControlName="contact" maxlength="10">
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.contact.dirty || signupForm.controls.contact.touched)"
+          class="alert alert-danger">
+          <span *ngIf="signupForm.hasError('required', 'contact')">Please enter contact</span>
+          <span *ngIf="signupForm.hasError('maxlength','contact')">maxlength is 30</span>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input type="password" matInput placeholder="password">
+        <input type="text" matInput placeholder="Address" formControlName="address" required>
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.address.touched || signupForm.controls.address.dirty)">
+          <span *ngIf="signupForm.hasError('required','address')">Please enter address.</span>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input type="password" matInput placeholder="confirm password">
+        <input type="text" matInput placeholder="Experience" formControlName="experience" required>
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.experience.touched || signupForm.controls.experience.dirty)">
+          <span *ngIf="signupForm.hasError('required','experience')">Please enter Experience.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" formControlName="password" required minlength="6" maxlength="30">
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.password.dirty || signupForm.controls.password.touched)"
+          class="alert alert-danger">
+          <span *ngIf="signupForm.hasError('required', 'password')">Please enter password</span>
+          <span *ngIf="signupForm.hasError('minlength','password')">minlength is 6</span>
+          <span *ngIf="signupForm.hasError('maxlength','password')">maxlength is 30</span>
+        </mat-error>
+
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Confirm Password" formControlName="confirm" required>
+        <mat-error
+          *ngIf="signupForm.invalid && (signupForm.controls.confirm.dirty || signupForm.controls.confirm.touched)"
+          class="alert alert-danger">
+          <span *ngIf="signupForm.hasError('required', 'confirm')">Please enter confirm password</span>
+          <span *ngIf="signupForm.hasError('misMatch')">Confirm password mismatched</span>
+        </mat-error>
       </mat-form-field>
     </mat-card-content>
+    <mat-card-actions align="center">
+      <button mat-raised-button color="primary">Sign up</button>
+    </mat-card-actions>
   </mat-card>
 </form>

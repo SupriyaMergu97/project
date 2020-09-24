@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './layout/layout.module#LayoutModule',
+  },
+  {
+    path:'',
+    loadChildren:'./tasks/tasks.module#TasksModule'
   }
 ];
 

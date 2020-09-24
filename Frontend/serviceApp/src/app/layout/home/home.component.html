@@ -12,21 +12,19 @@
 <div class="actions">
   <mat-form-field appearance="fill">
     <mat-label>City</mat-label>
-    <mat-select name="food">
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2">Option 2</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
+    <mat-select matSelect name="place">
+      <mat-option *ngFor="let place of cities" [value]="place.city">{{place.city}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Services</mat-label>
     <mat-select name="service">
       <mat-option *ngFor="let service of services" [value]="service.category">{{service.category}}</mat-option>
-      <!-- <mat-option value="option2">Option 2</mat-option>
-    <mat-option value="option3">Option 3</mat-option> -->
     </mat-select>
   </mat-form-field>
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="bookNow()">Book Now</button>
+    <button class="booknow" mat-raised-button (click)="bookNow()">Book Now</button>
+    <button class="booknow" mat-raised-button (click)="openDialog()">Open Dialog</button>
   </mat-card-actions>
 </div>
+

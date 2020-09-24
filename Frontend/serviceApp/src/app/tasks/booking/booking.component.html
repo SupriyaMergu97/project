@@ -1,3 +1,49 @@
-<p>
-  booking works!
-</p>
+<form class="formgroup" *ngIf="bookingForm" [formGroup]="bookingForm" (ngSubmit)="booking()"> 
+  <mat-card>
+    <mat-card-title>complete Booking Details</mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <input type="text" matInput placeholder="FullName" formControlName="fullName" required>
+        <mat-error
+        *ngIf="bookingForm.invalid && (bookingForm.controls.fullName.touched || bookingForm.controls.fullName.dirty)">
+        <span *ngIf="bookingForm.hasError('required','fullName')">Please enter full name.</span>
+      </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Mob No." formControlName="contact" required>
+      <mat-error
+          *ngIf="bookingForm.invalid && (bookingForm.controls.contact.touched || bookingForm.controls.contact.dirty)">
+          <span *ngIf="bookingForm.hasError('required','contact')">Please enter contact.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="email" matInput placeholder="EmailId" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Address"  formControlName="address" required>
+      <mat-error
+          *ngIf="bookingForm.invalid && (bookingForm.controls.address.touched || bookingForm.controls.address.dirty)">
+          <span *ngIf="bookingForm.hasError('required','address')">Please enter address.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="date" matInput placeholder="Preferred Date" formControlName="date" required>
+      <mat-error
+          *ngIf="bookingForm.invalid && (bookingForm.controls.date.touched || bookingForm.controls.date.dirty)">
+          <span *ngIf="bookingForm.hasError('required','date')">Please enter date.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="time" matInput placeholder="Preferred Time" formControlName="time" required>
+      <mat-error
+          *ngIf="bookingForm.invalid && (bookingForm.controls.time.touched || bookingForm.controls.time.dirty)">
+          <span *ngIf="bookingForm.hasError('required','time')">Please enter time.</span>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button mat-raised-button color="warn">Clear</button>
+      <button mat-raised-button color="primary" (click)="openDialog()">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

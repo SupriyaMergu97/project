@@ -1,3 +1,3 @@
 module.exports={
-    Service:require('./service')
+    Service:require('./service'),
 }
