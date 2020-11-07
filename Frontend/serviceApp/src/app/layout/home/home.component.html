@@ -10,21 +10,21 @@
   </div>
 </div>
 <div class="actions">
-  <mat-form-field appearance="fill">
-    <mat-label>City</mat-label>
-    <mat-select matSelect name="place">
-      <mat-option *ngFor="let place of cities" [value]="place.city">{{place.city}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Services</mat-label>
-    <mat-select name="service">
-      <mat-option *ngFor="let service of services" [value]="service.category">{{service.category}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <form [formGroup]="homeForm">
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <mat-select matSelect name="place" formControlName="city">
+        <mat-option *ngFor="let place of cities" [value]="place.city">{{place.city}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Services</mat-label>
+      <mat-select name="service" formControlName="category">
+        <mat-option *ngFor="let service of services" [value]="service.category">{{service.category}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
   <mat-card-actions>
     <button class="booknow" mat-raised-button (click)="bookNow()">Book Now</button>
-    <button class="booknow" mat-raised-button (click)="openDialog()">Open Dialog</button>
   </mat-card-actions>
 </div>
-

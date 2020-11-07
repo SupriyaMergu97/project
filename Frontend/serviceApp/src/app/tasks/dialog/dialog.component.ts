@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog',
@@ -8,11 +9,13 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class DialogComponent implements OnInit {
   message: string = "success"
-  cancelButtonText = "Cancel"
+  cancelButtonText = "Ok"
   constructor(@Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<DialogComponent>) {
+    private dialogRef: MatDialogRef<DialogComponent>,
+    private router:Router) {
     if (data) {
-      this.message = data.message || this.message;
+      // this.message = data.message || this.message;
+      this.home();
       if (data.buttonText) {
         this.cancelButtonText = data.buttonText.cancel || this.cancelButtonText;
       }
@@ -24,5 +27,8 @@ export class DialogComponent implements OnInit {
   // }
   ngOnInit() {
   }
+home(){
+  this.router.navigate(['/home'])
 
+}
 }

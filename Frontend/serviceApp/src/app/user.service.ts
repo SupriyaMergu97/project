@@ -24,7 +24,7 @@ export class UserService {
   }
   handleError(error) {
     console.log(error);
-    if (error.status === 401) {
+    if (error.status === 404) {
       return error
     }
     return throwError(error);
