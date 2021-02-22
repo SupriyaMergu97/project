@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-const baseApi = 'http://localhost:3100';
+const baseApi = 'http://3.138.184.162:3100';
 
 @Injectable({
   providedIn: 'root'
@@ -13,19 +13,19 @@ export class UserService {
   completeBooking(body): Observable<any> {
     return this.http.post(`${baseApi}/service/task`, body).pipe(catchError(this.handleError));
   }
-  selectCategory(){
+  selectCategory() {
     return this.http.get(`${baseApi}/service/showService`);
   }
-  selectCity(){
+  selectCity() {
     return this.http.get(`${baseApi}/service/showCity`);
   }
-  signUp(body):Observable<any>{
-    return this.http.post(`${baseApi}/service/signup`,body).pipe(catchError(this.handleError));
+  signUp(body): Observable<any> {
+    return this.http.post(`${baseApi}/service/signup`, body).pipe(catchError(this.handleError));
   }
   handleError(error) {
     console.log(error);
     if (error.status === 404) {
-      return error
+      return error;
     }
     return throwError(error);
   }

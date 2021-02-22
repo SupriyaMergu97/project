@@ -33,12 +33,12 @@ export class HomeComponent implements OnInit {
   getCity() {
     this.user.selectCity().subscribe((data: []) => {
       this.cities = data;
-    })
+    });
   }
   getService() {
     this.user.selectCategory().subscribe((data: []) => {
       this.services = data;
-    })
+    });
   }
 
 

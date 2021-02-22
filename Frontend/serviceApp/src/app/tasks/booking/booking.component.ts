@@ -16,27 +16,29 @@ import {
 })
 export class BookingComponent implements OnInit {
   bookingForm: FormGroup;
-  errorMessage: String;
+  errorMessage: string;
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   paramValues: any;
 
   constructor(private userService: UserService, private router: Router, private fb: FormBuilder,
-    public dialog: MatDialog, private snackBar: MatSnackBar,
-    private activeRoute: ActivatedRoute) { }
+              public dialog: MatDialog, private snackBar: MatSnackBar,
+              private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activeRoute.queryParams.subscribe((params) => {
-      this.paramValues = params; //console.log('_________ ', params);
+      this.paramValues = params;
+       // console.log('_________ ', params);
     });
     this.bookingForm = this.fb.group({
       fullName: ['', Validators.required],
+      // tslint:disable-next-line:no-unused-expression
       contact: [''[Validators.required, Validators.maxLength[10]]],
       email: [''],
       address: ['', Validators.required],
       date: ['', Validators.required],
       time: ['', Validators.required]
-    })
+    });
   }
   booking() {
     this.errorMessage = '';
@@ -48,11 +50,10 @@ export class BookingComponent implements OnInit {
           this.router.navigate(['/home']);
         }
       }, (err) => {
-        console.log('errr :: ', err.error.message)
+        console.log('errr :: ', err.error.message);
         this.errorMessage = err ? err.error.message : 'something went wrong';
       });
-    }
-    else {
+    } else {
       this.openSnackBar();
     }
   }

@@ -10,7 +10,7 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  signupForm = <any>FormGroup;
+  signupForm = <any> FormGroup;
   services: any[];
   cities: any[];
   errorMessage: String;
@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.fb.group({
       city: ['', Validators.required],
       category: ['', Validators.required],
-      firstName: ['', Validators.required],
+      firstName: ['', Validators.required], 
       lastName: ['', Validators.required],
       contact: ['', Validators.compose[Validators.required, Validators.minLength[10]]],
       address: ['', Validators.required],
@@ -59,7 +59,7 @@ export class SignupComponent implements OnInit {
           // this.router.navigate(['/login']);
         }
       }, (err) => {
-        console.log('error : ', err.error.message)
+        console.log('error : ', err.error.message);
         this.errorMessage = err ? err.error.message : 'something went wrong';
       });
     }

@@ -1,49 +1,52 @@
 mat-card {
   .container {
-    margin: 0px 14%;
-    .row {
-      display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 15%;
 
-      .column {
-        flex: 50%;
-        text-align: center;
-      }
-    }
-    p,
-    h3 {
+    p, h3 {
       text-align: center;
     }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      
+      div {
+        padding: 10px;
+      }
+    }
   }
-  h3,
-  h2 {
-    color: #d9232d;
-    text-align: center;
-    letter-spacing: 4px;
-    font-weight: 400;
-  }
+  
   hr {
     width: 200px;
     border: 1px dotted #d9232d;
   }
-  p {
-    color: rgb(68, 68, 68);
-    line-height: 2;
-  }
-  mat-grid-tile {
-    background-color: #f5f5f5;
-  }
-  img {
-    margin-right: 15px;
-  }
-  .about h3 {
-    color: rgb(68, 68, 68);
-    font-family: cursive;
-  }
-  button {
-    width: 50%;
-    background-color: #d9232d;
-  }
-  .about{
+  
+  .about-grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
   }
+  // h3,
+  // h2 {
+  //   color: #d9232d;
+  //   text-align: center;
+  //   letter-spacing: 4px;
+  //   font-weight: 400;
+  // }
+  // p {
+  //   color: rgb(68, 68, 68);
+  //   line-height: 2;
+  // }
+  mat-grid-tile {
+    background-color: #f5f5f5;
+
+    app-about-tile {
+      height: 100%;
+    }
+  }
+
 }

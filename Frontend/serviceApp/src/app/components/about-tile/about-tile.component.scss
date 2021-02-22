@@ -1,0 +1,40 @@
+.tile {
+  display: flex;
+  justify-content: space-between;
+
+  .about {
+    margin:0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .description{
+      height: 50%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      
+      p {
+        line-height: 2;
+        text-align: center;
+        margin: 8px 0;
+      }
+    }
+
+    button {
+      background-color: #d9232d;
+      padding: 0 36px;
+      margin: 8px 0;
+    }
+
+    h3 {
+      font-family: cursive;
+      text-align: center;
+      letter-spacing: 4px;
+      font-weight: 400;
+      margin: 8px 0 ;
+
+    }
+  }
+}
+

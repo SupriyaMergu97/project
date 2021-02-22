@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../material.module';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ComponentsModule
   ]
 })
 export class LayoutModule { }
